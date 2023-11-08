@@ -17,5 +17,17 @@ describe('#breedFetcher', () => {
       done();
     });
   });
+  it('should return an empty description for "Cookie Monster"', (done) => {
+    fetchBreedDescription('Cookie Monster', (err, desc) => {
+      // no error in this scenario
+      assert.equal(err, null);
+
+      const expectedDesc = '[]';
+
+      assert.equal(expectedDesc, desc.body);
+
+      done();
+    });
+  });
 });
 
